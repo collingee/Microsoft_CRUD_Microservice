@@ -4,7 +4,7 @@
  * Summary: This Pojo file contains the structure of the Employee class
  **/
 
-package com.collingee.microsoft_crud_microservice.employee;
+package com.collingee.microsoft_crud_microservice.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -23,7 +23,18 @@ public class Employee {
     private boolean isActive;
     private int salary;
 
+
+
     Employee(){}
+
+    Employee(Long employeeId, String firstName, String lastName, String department, boolean isActive, int salary) {
+        this.employeeId = employeeId;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.department = department;
+        this.isActive = isActive;
+        this.salary = salary;
+    }
 
     public Long getEmployeeId(){
         return employeeId;
