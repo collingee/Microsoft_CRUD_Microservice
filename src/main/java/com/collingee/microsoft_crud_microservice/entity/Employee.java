@@ -6,24 +6,39 @@
 
 package com.collingee.microsoft_crud_microservice.entity;
 
+import jakarta.persistence.Id;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.PositiveOrZero;
 
+// Employee Pojo
 @Entity
 public class Employee {
 
+    // Primary Key of database
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long employeeId;
+
+    @NotNull(message = "First name cannot be null")
     private String firstName;
+
+    @NotNull(message = "Last name cannot be null")
     private String lastName;
+
+    @NotNull(message = "Department cannot be null")
     private String department;
+
+    @NotNull(message = "Activity status cannot be null")
     private boolean isActive;
+
+    @PositiveOrZero(message = "Salary cannot be negative")
     private int salary;
-
-
 
     Employee(){}
 
