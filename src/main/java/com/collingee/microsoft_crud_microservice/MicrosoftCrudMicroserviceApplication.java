@@ -1,3 +1,9 @@
+/**
+ * Author: Collin Gee
+ * Created: 12/7/2023
+ * Summary: This file provides the runnable entry point for the CRUD microservice
+ **/
+
 package com.collingee.microsoft_crud_microservice;
 
 import org.springframework.boot.SpringApplication;
